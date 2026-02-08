@@ -1,0 +1,189 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.scoreboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.scoreboard-header {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.scoreboard-header h1 {
+  color: #1d3557;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.date-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.date-selector label {
+  font-weight: 600;
+  color: #1d3557;
+}
+
+.date-selector input[type="date"] {
+  padding: 10px 15px;
+  border: 2px solid #667eea;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.date-selector input[type="date"]:hover {
+  border-color: #764ba2;
+}
+
+.date-selector input[type="date"]:focus {
+  outline: none;
+  border-color: #764ba2;
+  box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.1);
+}
+
+.games-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.game-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.game-status {
+  text-align: center;
+  font-weight: 700;
+  color: #e63946;
+  padding: 8px;
+  background: #fff1f2;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.team {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.away-team {
+  background: #f8f9fa;
+  margin-bottom: 10px;
+}
+
+.home-team {
+  background: #e9ecef;
+  margin-top: 10px;
+}
+
+.team:hover {
+  background: #dee2e6;
+}
+
+.team-abbr {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #1d3557;
+  min-width: 60px;
+}
+
+.team-name {
+  flex: 1;
+  font-size: 0.9rem;
+  color: #495057;
+  padding: 0 10px;
+}
+
+.team-score {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #667eea;
+  min-width: 50px;
+  text-align: right;
+}
+
+.vs-divider {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #6c757d;
+  padding: 5px 0;
+}
+
+.loading, .error, .no-games {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.loading {
+  color: #667eea;
+  font-weight: 600;
+}
+
+.error {
+  color: #e63946;
+  font-weight: 600;
+}
+
+.no-games {
+  color: #6c757d;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .scoreboard-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .scoreboard-header h1 {
+    font-size: 2rem;
+  }
+
+  .games-container {
+    grid-template-columns: 1fr;
+  }
+}
